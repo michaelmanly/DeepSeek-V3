@@ -226,17 +226,6 @@ We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.c
 
 ## 6. How to Run Locally
 
-### Optional: serve with Badgr on your own GPU
-
-If you already have a working serving script for `deepseek-ai/DeepSeek-V3`, [Badgr](https://aibadgr.com) can manage the service on **your own connected GPU (BYO GPU)**. Supported rented cloud GPUs are another option; this is a third-party workflow, not an official deployment method.
-
-```bash
-badgr node connect --name gpu-box-1
-badgr serve ./start-vllm.sh --target gpu-box-1
-```
-
-`start-vllm.sh` is your own model-specific, tested launch script—not a script bundled with this repository. DeepSeek-V3 needs substantial multi-GPU capacity and the recommended engine configuration. This example has not been end-to-end tested for this model.
-
 DeepSeek-V3 can be deployed locally using the following hardware and open-source community software:
 
 1. **DeepSeek-Infer Demo**: We provide a simple and lightweight demo for FP8 and BF16 inference.
