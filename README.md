@@ -224,6 +224,17 @@ You can chat with DeepSeek-V3 on DeepSeek's official website: [chat.deepseek.com
 
 We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.com](https://platform.deepseek.com/)
 
+### Optional GPU serving via Badgr (third-party)
+
+For users who already have a working model-serving setup, [Badgr](https://aibadgr.com) can manage a serving process on a connected GPU machine. This is an optional community workflow, not an official model deployment method.
+
+```bash
+badgr node connect --name gpu-box-1
+badgr serve ./start-vllm.sh --target gpu-box-1
+```
+
+Here `start-vllm.sh` is **your own tested launch script** for `deepseek-ai/DeepSeek-V3`, with the model-specific vLLM flags from this project's serving guidance. Badgr also offers cloud GPU capacity; select a supported cloud target according to its CLI documentation. DeepSeek-V3 is a large MoE model. Configure the recommended vLLM/SGLang runtime, parallelism and GPU capacity first; the simple model-first form is not a verified one-command deployment for this checkpoint. These commands have not been end-to-end tested as part of this documentation change.
+
 ## 6. How to Run Locally
 
 DeepSeek-V3 can be deployed locally using the following hardware and open-source community software:
